@@ -1,0 +1,25 @@
+from tkinter import *
+from time import *
+
+
+def update():
+    time_string = strftime("%H:%M:%S")
+    time_label.config(text=time_string)
+
+    date_string = strftime("%d/%m/%Y")
+    date_label.config(text=date_string)
+
+    window.after(1000,update)
+
+
+window = Tk()
+
+time_label = Label(window, font=("Arial", 50), fg="pink", bg="black")
+time_label.pack()
+
+date_label = Label(window, font=("Ink free", 60), fg="white", bg="black")
+date_label.pack()
+
+update()
+
+window.mainloop()
